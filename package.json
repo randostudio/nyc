@@ -1,0 +1,18 @@
+{
+  "name": "petal-health-nyc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Directory of doctors, resources, groups and workouts for college women in NYC, centered on 303 Broome St.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "dev": "node --env-file-if-exists=.env --watch src/server.js",
+    "db:setup": "node --env-file-if-exists=.env scripts/setup-db.js"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.3.0",
+    "express": "^5.1.0",
+    "pg": "^8.13.0"
+  }
+}

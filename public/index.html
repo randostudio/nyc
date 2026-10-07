@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Petal Health NYC</title>
+  <meta name="description" content="Doctors, therapists, workouts, yoga, Pilates, clubs, beauty and resources for college women — all close to 303 Broome St, NYC.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ff7eb6' stroke='%232a1631' stroke-width='4'%3E%3Ccircle cx='50' cy='30' r='14'/%3E%3Ccircle cx='69' cy='44' r='14'/%3E%3Ccircle cx='62' cy='66' r='14'/%3E%3Ccircle cx='38' cy='66' r='14'/%3E%3Ccircle cx='31' cy='44' r='14'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='10' fill='%23ffd84d' stroke='%232a1631' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header" id="header">
+    <div class="header-row wrap">
+      <a class="brand" href="#/" aria-label="Petal Health NYC home">
+        <span class="logo-mark"></span><span class="brand-name">Petal Health</span><span class="brand-tag">NYC</span>
+      </a>
+      <nav class="main-nav" id="nav" aria-label="Categories">
+        <a href="#/c/doctors" data-cat="doctors">Doctors</a>
+        <a href="#/c/mental-health" data-cat="mental-health">Mental health</a>
+        <a href="#/c/workouts" data-cat="workouts">Workouts</a>
+        <a href="#/c/clubs" data-cat="clubs">Clubs</a>
+        <a href="#/c/beauty" data-cat="beauty">Beauty</a>
+        <a href="#/c/resources" data-cat="resources">Resources</a>
+      </nav>
+      <div class="header-actions">
+        <a class="saved-link" href="#/saved" id="saved-link">Saved (0)</a>
+        <button class="btn dark" type="button" data-open-submit>Submit a spot</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app"><div class="loading">blooming…</div></main>
+
+  <dialog id="detail" aria-labelledby="detail-title"></dialog>
+
+  <dialog id="submit" aria-labelledby="submit-title">
+    <div class="d-top" style="background:var(--yellow)">
+      <button class="d-close" type="button" data-close aria-label="Close">×</button>
+      <h2 id="submit-title">Know a gem? Spill.</h2>
+      <div>Add a doctor, studio or club you love near 303 Broome. We verify, the girls benefit.</div>
+    </div>
+    <form class="d-body form" id="submit-form">
+      <label>Name of the place or group *<input name="name" required maxlength="200" placeholder="e.g. Sunday run club at Seward Park"></label>
+      <div class="row">
+        <label>Category<select name="category" id="submit-category"></select></label>
+        <label>Website<input name="website" type="url" maxlength="300" placeholder="https://"></label>
+      </div>
+      <label>Address or neighborhood<input name="address" maxlength="300" placeholder="Street address, or 'online'"></label>
+      <label>Why you love it<textarea name="why" maxlength="2000" placeholder="Takes student insurance? $15 classes? Tell us."></textarea></label>
+      <label>Your name / school (optional)<input name="submitter" maxlength="200" placeholder="Hunter '27"></label>
+      <div class="d-actions"><button class="btn" type="submit">Send it ✦</button></div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
